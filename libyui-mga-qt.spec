@@ -4,7 +4,7 @@
 
 Name:		libyui-mga-qt
 Version:	1.0.4
-Release:	2
+Release:	3
 Summary:	UI abstraction library - Qt plugin
 License:	LGPLv2+
 Group:		System/Libraries
@@ -43,12 +43,12 @@ Group:		System/Libraries
 Requires:	libyui
 Requires:	%{_lib}qt5x11extras5
 Provides:	%{name} = %{EVRD}
-Provides:	libyui%{major}-qt = %{EVRD}
+Provides:	libyui%{major}-mga-qt = %{EVRD}
 %rename %{_lib}yui-mga8-qt
 
 %description -n %{libname}
 This package contains the library needed to run programs
-dynamically linked with libyui-qt.
+dynamically linked with libyui-mga-qt.
 
 %files -n %{libname}
 %{_libdir}/yui/lib*.so.*
@@ -60,10 +60,10 @@ Summary:	%{summary} header files
 Group:		Development/KDE and Qt
 Requires:	libyui-devel
 Requires:	%{name} = %{EVRD}
-Provides:	yui-qt-devel = %{EVRD}
+Provides:	yui-mga-qt-devel = %{EVRD}
 
 %description -n %{develname}
-This package provides headers files for libyui-qt development.
+This package provides headers files for libyui-mga-qt development.
 
 %files -n %{develname}
 %{_includedir}/yui
