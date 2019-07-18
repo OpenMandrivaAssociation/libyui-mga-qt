@@ -3,8 +3,8 @@
 %define develname %mklibname yui-mga-qt -d
 
 Name:		libyui-mga-qt
-Version:	1.0.4
-Release:	3
+Version:	1.0.5
+Release:	1
 Summary:	UI abstraction library - Qt plugin
 License:	LGPLv2+
 Group:		System/Libraries
