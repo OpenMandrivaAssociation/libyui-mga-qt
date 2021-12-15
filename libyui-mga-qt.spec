@@ -1,32 +1,33 @@
-%define major 8
+%define major 15
 %define libname %mklibname yui %{major}-mga-qt
 %define develname %mklibname yui-mga-qt -d
 
 Name:		libyui-mga-qt
-Version:	1.0.6
+Version:	1.2.0
 Release:	1
 Summary:	UI abstraction library - Qt plugin
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/manatools/libyui-mga-qt
-Source0:	https://github.com/manatools/libyui-mga-qt/archive/%{version}.tar.gz
+Source0:	https://github.com/manatools/libyui-mga-qt/archive/%{name}-%{version}.tar.gz
+Patch0:		fix-linking.patch
 
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libyui) >= 3.1.2
 BuildRequires:	pkgconfig(libyui-mga)
+BuildRequires:	pkgconfig(libyui-qt)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5X11Extras)
 BuildRequires:	pkgconfig(libtirpc)
-BuildRequires:	cmake(Libyui-qt)
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	qmake5
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
-BuildRequires:	texlive
+#BuildRequires:	texlive
 BuildRequires:	graphviz
 BuildRequires:	ghostscript
 BuildRequires:	pkgconfig(fontconfig)
@@ -68,8 +69,8 @@ This package provides headers files for libyui-mga-qt development.
 %files -n %{develname}
 %{_includedir}/yui
 %{_libdir}/yui/lib*.so
-%{_libdir}/pkgconfig/libyui-mga-qt.pc
-%{_libdir}/cmake/libyui-mga-qt
+#%{_libdir}/pkgconfig/libyui-mga-qt.pc
+#%{_libdir}/cmake/libyui-mga-qt
 
 #-----------------------------------------------------------------------
 
@@ -77,7 +78,7 @@ This package provides headers files for libyui-mga-qt development.
 %autosetup -p1
 
 %build
-./bootstrap.sh
+#./bootstrap.sh
 %cmake \
     -DYPREFIX=%{_prefix}  \
     -DDOC_DIR=%{_docdir} \

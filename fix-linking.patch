@@ -1,0 +1,30 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 8a6f12e..4cfe4e1 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -37,6 +37,9 @@ set( TARGETLIB_BASE     yui-mga-qt    )
+ set( HEADERS_INSTALL_DIR ${CMAKE_INSTALL_INCLUDEDIR}/yui/mga/qt )
+ set( PLUGIN_DIR          ${CMAKE_INSTALL_LIBDIR}/yui ) # /usr/lib64/yui
+ 
++PKG_CHECK_MODULES(YUIQT REQUIRED libyui-qt)
++
++
+ # if DESTDIR is set, CMAKE_INSTALL_INCLUDEDIR already contains it
+ # during "make install" (but not for other make targets!):
+ #
+@@ -93,6 +96,7 @@ target_compile_definitions( ${TARGETLIB} PUBLIC VERSION="${VERSION}" )
+ target_link_directories( ${TARGETLIB}
+   PUBLIC ${YUI_LIBRARY_DIRS}
+   PUBLIC ${YUIMGA_LIBRARY_DIRS}
++  PUBLIC ${YUIQT_LIBRARY_DIRS}
+ )
+ 
+ 
+@@ -102,6 +106,7 @@ target_link_directories( ${TARGETLIB}
+ target_link_libraries( ${TARGETLIB}
+   ${YUI_LIBRARIES}
+   ${YUIMGA_LIBRARIES}
++  ${YUIQT_LIBRARIES}
+   Qt5::Core
+   Qt5::Gui
+   Qt5::Widgets
