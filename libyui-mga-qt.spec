@@ -4,7 +4,7 @@
 
 Name:		libyui-mga-qt
 Version:	1.2.0
-Release:	1
+Release:	2
 Summary:	UI abstraction library - Qt plugin
 License:	LGPLv2+
 Group:		System/Libraries
