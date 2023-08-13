@@ -1,10 +1,11 @@
-%define major 15
-%define libname %mklibname yui %{major}-mga-qt
+%define major 16
+%define oldlibname %mklibname yui 15-mga-qt
+%define libname %mklibname yui-mga-qt
 %define develname %mklibname yui-mga-qt -d
 
 Name:		libyui-mga-qt
 Version:	1.2.0
-Release:	2
+Release:	3
 Summary:	UI abstraction library - Qt plugin
 License:	LGPLv2+
 Group:		System/Libraries
@@ -46,6 +47,7 @@ Requires:	%{_lib}qt5x11extras5
 Provides:	%{name} = %{EVRD}
 Provides:	libyui%{major}-mga-qt = %{EVRD}
 %rename %{_lib}yui-mga8-qt
+%rename %{oldlibname}
 
 %description -n %{libname}
 This package contains the library needed to run programs
